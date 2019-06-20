@@ -1,0 +1,1 @@
+require 'forwardable'class MyQueue  extend Forwardable  attr_reader :queue  def initialize    @queue = []  end  def_delegator(:@queue, :push, :enqueue)  def_delegator(:@queue, :first)  def_delegator(:@queue, :last)  def_delegator(:@queue, :clear)  def_delegator(:@queue, :size)  def_delegator(:@queue, :shift, :dequeue)end
